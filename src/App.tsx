@@ -8,6 +8,7 @@ import sqliteLogo from '../src/img/sqlite-logo.png'
 import viteLogo from '../src/img/vite-logo.png'
 import typescriptLogo from '../src/img/typescript-logo.png'
 import reactLogo from '../src/img/react-logo.png'
+import wwwLogo from '../src/img/www-logo.png'
 import NavLinksDesktop from './components/desktopNav/NavLinksDesktop'
 import Lines from './components/mobileNav/Lines'
 import MenuFunction from './components/mobileNav/MenuFunction'
@@ -157,7 +158,7 @@ function App() {
           <ContainerProyecto imageLink={fmaDemo} title='Forza Motorsport Argentina' description={<Parrafos description='Este es un sitio web creado para una comunidad de Forza Motorsport de Argentina. La misma contiene información relevante acerca de la comunidad, sobre las últimas carreras subidas a su canal de youtube asi tambien como una tabla con los resultados de sus campeonatos mas recientes. Se utilizó React Router para separan los apartados en distintas páginas.' />} proyectLinks={
             <>
               <ProyectoLinks enlace='https://github.com/tomymkiv/forzamotorsportargentina' imagen='https://preflib.github.io/PrefLib-Jekyll/assets/img/gitHubLogo.png' title='Repositorio' alt='Repositorio de github' />
-              <ProyectoLinks enlace='https://tomymkiv.github.io/forzamotorsportargentina/' imagen='/src/img/www-logo.png' title='Pagina web' alt='Sitio web' />
+              <ProyectoLinks enlace='https://tomymkiv.github.io/forzamotorsportargentina/' imagen={wwwLogo} title='Pagina web' alt='Sitio web' />
             </>
           }>
             <LogosLenguajes imageLink={tailwindLogo} lenguaje="Tailwind CSS" />
