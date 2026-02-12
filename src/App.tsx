@@ -1,12 +1,20 @@
 import './App.css'
-import jsLogo from '../src/img/js-logo.png'
-import tailwindLogo from '../src/img/tailwind-logo.png'
-import laravelLogo from '../src/img/laravel-logo.png'
-import sqliteLogo from '../src/img/sqlite-logo.png'
-import viteLogo from '../src/img/vite-logo.png'
-import typescriptLogo from '../src/img/typescript-logo.png'
-import reactLogo from '../src/img/react-logo.png'
-import wwwLogo from '../src/img/www-logo.png'
+import htmlLogo from '../public/img/html-logo.png'
+import cssLogo from '../public/img/css-logo.png'
+import jsLogo from '../public/img/js-logo.png'
+import bootstrapLogo from '../public/img/bootstrap-logo.png'
+import tailwindLogo from '../public/img/tailwind-logo.png'
+import phpLogo from '../public/img/php-logo.png'
+import mysqlLogo from '../public/img/mysql-logo.png'
+import githubLogo from '../public/img/github-logo.png'
+import gitLogo from '../public/img/git-logo.png'
+import antigravityLogo from '../public/img/antigravity-logo.png'
+import laravelLogo from '../public/img/laravel-logo.png'
+import sqliteLogo from '../public/img/sqlite-logo.png'
+import viteLogo from '../public/img/vite-logo.png'
+import typescriptLogo from '../public/img/typescript-logo.png'
+import reactLogo from '../public/img/react-logo.png'
+import wwwLogo from '../public/img/www-logo.png'
 import NavLinksDesktop from './components/desktopNav/NavLinksDesktop'
 import Lines from './components/mobileNav/Lines'
 import NavLinkMobile from './components/mobileNav/NavLinkMobile'
@@ -130,47 +138,44 @@ export default function App() {
         <ContainerTitulos title='Habilidades' />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start w-full">
           <ContainerHabilidades title='Desarrollo frontend' >
-            <Habilidades img="./src/img/html-logo.png" lenguaje='HTML5' />
-            <Habilidades img="./src/img/css-logo.png" lenguaje='CSS3' />
-            <Habilidades img="./src/img/js-logo.png" lenguaje='JavaScript' />
-            <Habilidades img="./src/img/typescript-logo.png" lenguaje='TypeScript' />
-            <Habilidades img="./src/img/react-logo.png" lenguaje='React' />
-            <Habilidades img="./src/img/bootstrap-logo.png" lenguaje='Bootstrap' />
-            <Habilidades img="./src/img/tailwind-logo.png" lenguaje='Tailwind' />
+            <Habilidades img={htmlLogo} lenguaje='HTML5' />
+            <Habilidades img={cssLogo} lenguaje='CSS3' />
+            <Habilidades img={jsLogo} lenguaje='JavaScript' />
+            <Habilidades img={typescriptLogo} lenguaje='TypeScript' />
+            <Habilidades img={reactLogo} lenguaje='React' />
+            <Habilidades img={bootstrapLogo} lenguaje='Bootstrap' />
+            <Habilidades img={tailwindLogo} lenguaje='Tailwind' />
           </ContainerHabilidades>
           <ContainerHabilidades title='Desarrollo backend' >
-            <Habilidades img="./src/img/php-logo.png" lenguaje='PHP' />
-            <Habilidades img="./src/img/laravel-logo.png" lenguaje='Laravel' />
-            <Habilidades img="./src/img/mysql-logo.png" lenguaje='MySQL' />
-            <Habilidades img="./src/img/sqlite-logo.png" lenguaje='SQLite' />
+            <Habilidades img={phpLogo} lenguaje='PHP' />
+            <Habilidades img={laravelLogo} lenguaje='Laravel' />
+            <Habilidades img={mysqlLogo} lenguaje='MySQL' />
+            <Habilidades img={sqliteLogo} lenguaje='SQLite' />
           </ContainerHabilidades>
         </div>
         <ContainerHabilidades title='Otras herramientas' >
-          <Habilidades img="./src/img/github-logo.png" lenguaje='GitHub' />
-          <Habilidades img="./src/img/vite-logo.png" lenguaje='Vite' />
-          <Habilidades img="./src/img/git-logo.png" lenguaje='Git' />
-          <Habilidades img="./src/img/antigravity-logo.png" lenguaje='Antigravity' />
+          <Habilidades img={githubLogo} lenguaje='GitHub' />
+          <Habilidades img={viteLogo} lenguaje='Vite' />
+          <Habilidades img={gitLogo} lenguaje='Git' />
+          <Habilidades img={antigravityLogo} lenguaje='Antigravity' />
         </ContainerHabilidades>
       </div>
     </Section>
     <Section apartado='Proyectos' clases='!h-auto scroll-mt-[100px]'>
       <div className="flex flex-col items-center justify-center lg:max-w-6xl">
         <ContainerTitulos title='Proyectos destacados' />
-        {/* cambiar a sm:grid-cols-2 cuando hayan, al menos, dos proyectos para mostrar */}
-
         <span className="text-center my-10 text-md font-medium">{innerWidth > 768 ? 'Clickea' : 'Toca'} las imagenes para ver más</span>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <ContainerProyecto imageLink={projectImages.aeibook} title='Aeibook' description={<Parrafos description='Este es un proyecto basado en una red social. En esta se pueden realizar diferentes acciones que van desde CRUD con el usuario que registras (crear, leer, editar y eliminar), al igual que con las publicaciones, las cuales soportan tanto video como imagen.' />} proyectLinks={<ProyectoLinks enlace='https://github.com/tomymkiv/Aeibook' imagen='./src/img/github-logo.png' title='Repositorio' alt='Repositorio de github' />}>
+          <ContainerProyecto imageLink={projectImages.aeibook} title='Aeibook' description={<Parrafos description='Este es un proyecto basado en una red social. En esta se pueden realizar diferentes acciones que van desde CRUD con el usuario que registras (crear, leer, editar y eliminar), al igual que con las publicaciones, las cuales soportan tanto video como imagen.' />} proyectLinks={<ProyectoLinks enlace='https://github.com/tomymkiv/Aeibook' imagen={githubLogo} title='Repositorio' alt='Repositorio de github' />}>
             <LogosLenguajes imageLink={tailwindLogo} lenguaje="Tailwind CSS" />
             <LogosLenguajes imageLink={jsLogo} lenguaje="JavaScript" />
             <LogosLenguajes imageLink={laravelLogo} lenguaje="Laravel" />
             <LogosLenguajes imageLink={sqliteLogo} lenguaje="SQLite" />
             <LogosLenguajes imageLink={viteLogo} lenguaje="Vite" />
-            {/* <ProyectoLinks enlace='#' imagen='/src/img/www-logo.png' title='Pagina web' alt='Sitio web' /> */}
           </ContainerProyecto>
           <ContainerProyecto imageLink={projectImages.fma} title='Forza Motorsport Argentina' description={<Parrafos description='Este es un sitio web creado para una comunidad de Forza Motorsport de Argentina. La misma contiene información relevante acerca de la comunidad, sobre las últimas carreras subidas a su canal de youtube asi tambien como una tabla con los resultados de sus campeonatos mas recientes. Se utilizó React Router para separan los apartados en distintas páginas.' />} proyectLinks={
             <>
-              <ProyectoLinks enlace='https://github.com/tomymkiv/forzamotorsportargentina' imagen='./src/img/github-logo.png' title='Repositorio' alt='Repositorio de github' />
+              <ProyectoLinks enlace='https://github.com/tomymkiv/forzamotorsportargentina' imagen={githubLogo} title='Repositorio' alt='Repositorio de github' />
               <ProyectoLinks enlace='https://tomymkiv.github.io/forzamotorsportargentina/' imagen={wwwLogo} title='Pagina web' alt='Sitio web' />
             </>
           }>
@@ -181,8 +186,7 @@ export default function App() {
           </ContainerProyecto>
           <ContainerProyecto imageLink={projectImages.concesionario} title='Concesionario' description={<Parrafos description='Este proyecto consiste en una pagina web para compra-venta de autos. La misma cuenta con un apartado para realizar publicaciones, verlas, eliminarlas y editarlas. Se utilizó React Router para separan los apartados en distintas páginas. Se implementó un sistema de autenticación con Laravel para usuarios registrados.' />} proyectLinks={
             <>
-              <ProyectoLinks enlace='https://github.com/tomymkiv/compra-venta-autos' imagen='./src/img/github-logo.png' title='Repositorio' alt='Repositorio de github' />
-              {/* <ProyectoLinks enlace='https://tomymkiv.github.io/forzamotorsportargentina/' imagen={wwwLogo} title='Pagina web' alt='Sitio web' /> */}
+              <ProyectoLinks enlace='https://github.com/tomymkiv/compra-venta-autos' imagen={githubLogo} title='Repositorio' alt='Repositorio de github' />
             </>
           }>
             <LogosLenguajes imageLink={tailwindLogo} lenguaje="Tailwind CSS" />
