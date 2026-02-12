@@ -4,11 +4,8 @@ interface Props {
     title: string,
 }
 
-function ContainerTitulos(props: Props) {
-    const {title} = props;
+export default function ContainerTitulos({ title }: Props) {
     return <div className="my-10">
-        <Titulos title={title} /> 
+        <Titulos title={title} />
     </div>;
 }
-
-export default ContainerTitulos;

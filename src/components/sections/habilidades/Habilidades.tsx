@@ -1,13 +1,12 @@
 interface Props {
-    lenguaje: string;
-    clase: string;
+    img: string;
+    lenguaje: string,
 }
 
-function Habilidades(props: Props) {
-    const { lenguaje, clase } = props
-
-    return <span
-        className={"flex items-center justify-center p-2 rounded-full bg-gray-200 text-center border border-gray-400 font-medium transition-background duration-300 " + clase}>{lenguaje}</span>;
+export default function Habilidades({ img, lenguaje }: Props) {
+    return <div className="flex flex-col items-center justify-between">
+        <img src={img}
+            className={"p-4 hover:scale-115 drop-shadow-sm hover:drop-shadow-gray-200 transition-transform duration-300 max-w-[125px]"} />
+        <p className="font-bold text-shadow-md text-shadow-gray-600">{lenguaje}</p>
+    </div>
 }
-
-export default Habilidades;

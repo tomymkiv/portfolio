@@ -1,10 +1,7 @@
-interface Props{
+interface Props {
     text: string,
 }
 
-function NavLiMobile(props: Props) {
-    const { text } = props;
+export default function NavLiMobile({ text }: Props) {
     return <li className="font-medium text-xl">{text}</li>;
 }
-
-export default NavLiMobile;

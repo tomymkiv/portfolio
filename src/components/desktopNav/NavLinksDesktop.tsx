@@ -4,11 +4,8 @@ interface Props {
     enlace: string,
 }
 
-function NavLinksDesktop(props: Props) {
-    const { enlace } = props;
-    return <a href={"#" + enlace} className="hover:text-blue-600 font-medium transition-colors duration-300 rounded-lg my-4 mx-2" >
+export default function NavLinksDesktop({ enlace }: Props) {
+    return <a href={"#" + enlace} className="text-slate-400 hover:text-slate-200 font-medium transition-colors duration-300 rounded-lg my-4 mx-2" >
         <NavLiDesktop text={enlace} />
     </a >
 }
-
-export default NavLinksDesktop;

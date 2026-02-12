@@ -6,11 +6,8 @@ interface Props {
     clases?: string,
 }
 
-function Section(props: Props) {
-    const { apartado, children, clases } = props;
-    return <section id={apartado} className={"h-screen flex justify-center mx-3 my-75 " + clases} >
+export default function Section({ apartado, children, clases }: Props) {
+    return <section id={apartado} className={"flex justify-center mx-3 my-75 " + clases} >
         {children}
     </section>;
 }
-
-export default Section;
