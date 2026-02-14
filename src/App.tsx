@@ -30,7 +30,7 @@ import ProyectoLinks from './components/sections/proyectos/ProyectoLinks'
 import Section from './components/sections/Section'
 import { projectImages } from './assets/data/proyectImages'
 import Button from './components/Button'
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 
 export default function App() {
   const [menuOn, setMenuOn] = useState(false);
@@ -39,7 +39,21 @@ export default function App() {
     setMenuOn(!menuOn);
     document.body.classList.toggle('overflow-hidden');
   }
+  const [result, setResult] = useState("");
 
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    formData.append("access_key", "9bb4d3ae-976e-4fab-b4ee-95c54c892727");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "¡Tu solicitud se ha enviado correctamente!" : "Hubo un error al enviar la solicitud.");
+  };
   return <>
     <header className="flex md:justify-center">
       <nav className='w-full'>
@@ -214,14 +228,19 @@ export default function App() {
               <span className='rounded-full border border-gray-600 p-2.5 text-2xl'>✉️</span><span className="font-[600]">silvettifrancisco04@gmail.com</span>
             </div>
           </div>
-          <div className="w-full border border-gray-600 rounded-md px-7.5 py-10 shadow-lg bg-gray-950/60">
-            <form target="_blank" action="https://formsubmit.co/silvettifrancisco04@gmail.com" method="POST" className='flex flex-col gap-5'>
-              <InputGroup type='text' name='Nombre' id='Nombre' />
-              <InputGroup type='email' name='Correo' id='Correo' />
-              <InputGroup name='Mensaje' id='Mensaje' />
-              <InputGroup type='submit' id='Enviar' clases='hover:bg-blue-800 cursor-pointer text-gray-200 font-medium' value='Enviar' />
-              <input type="hidden" name='_next' value={'http://tomymkiv.github.io/portfolio/'} />
-              <input type="hidden" name='_template' value='table' />
+          <div className="w-full border border-gray-600 rounded-md p-7 shadow-lg bg-gray-950/60">
+            <form target="_blank" onSubmit={(e) => onSubmit(e)} action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-5 justify-between'>
+              <div>
+                <InputGroup type='text' name='name' id='Nombre' campo='Nombre' />
+                <InputGroup type='email' name='email' id='Correo' campo='Correo' />
+                <InputGroup name='message' id='Mensaje' campo='Mensaje' />
+              </div>
+              <div className='w-full'>
+                <button type='submit' id='Enviar' className='hover:bg-blue-800 transition-colors duration-300 cursor-pointer text-gray-200 font-medium border border-gray-500 rounded-md p-3 w-full'>Enviar</button>
+                {
+                  result && <p className='text-green-500 font-[500] text-lg p-2 bg-green-500/30 rounded-md text-center mt-5'>{result}</p>
+                }
+              </div>
             </form>
           </div>
         </div>
