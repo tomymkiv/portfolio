@@ -22,6 +22,6 @@ export default function InputGroup({ type, name, id, clases, value, placeholder,
         {isInput ? <input type={type} name={name} id={id}
             className={"p-3 focus:shadow-md shadow-blue-400 transition-shadow duration-300 outline-none border border-gray-300 rounded-md " + clases} value={value} required placeholder={placeholder} />
             :
-            <textarea name={name} id={id} rows={10} className='p-3 focus:shadow-sm shadow-blue-400 transition-shadow duration-300 outline-none border border-gray-300 rounded-md'></textarea>}
+            <textarea name={name} id={id} rows={10} className='p-3 focus:shadow-sm shadow-blue-400 transition-shadow duration-300 outline-none border border-gray-300 rounded-md' placeholder={placeholder}></textarea>}
     </div>
 }

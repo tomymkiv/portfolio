@@ -216,24 +216,16 @@ export default function App() {
     <Section apartado='Contacto' clases='flex-col !mt-75 !mb-20'>
       <ContainerTitulos title='Contacto' />
       <div className='w-full flex items-center justify-center'>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center w-full lg:max-w-6xl">
+        <div className="flex flex-col gap-5 items-center justify-center w-full lg:max-w-4xl">
           <div className='flex flex-col gap-5 h-full'>
-            <div>
-              <h2 className='text-3xl font-medium'>Contactemos</h2>
-            </div>
             <div>
               <p className='text-lg'>Estoy interesado en oportunidades prácticas para obtener experiencia laboral y aportar a proyectos. Si tenés alguna oferta o interés, no dudes en contactarme.</p>
             </div>
-            <div className='flex items-center gap-5 p-4 bg-gray-950/60 rounded-md border border-gray-600 '>
-              <span className='rounded-full border border-gray-600 p-2.5 text-2xl'>✉️</span><span className="font-[600]">silvettifrancisco04@gmail.com</span>
-            </div>
-          </div>
-          <div className="w-full border border-gray-600 rounded-md p-7 shadow-lg bg-gray-950/60">
-            <form target="_blank" onSubmit={(e) => onSubmit(e)} action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-5 justify-between'>
+            <form target="_blank" onSubmit={(e) => onSubmit(e)} action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-5 justify-between w-full border border-gray-600 rounded-md p-7 shadow-lg bg-gray-950/60'>
               <div>
-                <InputGroup type='text' name='name' id='Nombre' campo='Nombre' />
-                <InputGroup type='email' name='email' id='Correo' campo='Correo' />
-                <InputGroup name='message' id='Mensaje' campo='Mensaje' />
+                <InputGroup type='text' name='name' id='Nombre' campo='Nombre' placeholder='Ingrese su nombre...' />
+                <InputGroup type='email' name='email' id='Correo' campo='Correo' placeholder='Ingrese su correo...' />
+                <InputGroup name='message' id='Mensaje' campo='Mensaje' placeholder='Deja tu mensaje...' />
               </div>
               <div className='w-full'>
                 <button type='submit' id='Enviar' className='hover:bg-blue-800 transition-colors duration-300 cursor-pointer text-gray-200 font-medium border border-gray-500 rounded-md p-3 w-full'>Enviar</button>
