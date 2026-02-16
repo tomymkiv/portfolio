@@ -229,9 +229,7 @@ export default function App() {
               </div>
               <div className='w-full'>
                 <button type='submit' id='Enviar' className='hover:bg-blue-800 transition-colors duration-300 cursor-pointer text-gray-200 font-medium border border-gray-500 rounded-md p-3 w-full'>Enviar</button>
-                {
-                  result && <p className='text-green-500 font-[500] text-lg p-2 bg-green-500/30 rounded-md text-center mt-5'>{result}</p>
-                }
+                <p className={result ? 'text-green-500 bg-green-500/50' : 'text-red-500 bg-red-500/50' + ' font-[500] text-lg p-2 rounded-md text-center mt-5'}>{result}</p>
               </div>
             </form>
           </div>
