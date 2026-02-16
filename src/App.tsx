@@ -34,6 +34,7 @@ import { useState, type FormEvent } from 'react'
 
 export default function App() {
   const [menuOn, setMenuOn] = useState(false);
+  const [resultMsgClass, setresultMsgClass] = useState('')
 
   const MenuFunction = () => {
     setMenuOn(!menuOn);
@@ -52,6 +53,7 @@ export default function App() {
     });
 
     const data = await response.json();
+    data.success ? setresultMsgClass('text-green-500 bg-green-500/50') : setresultMsgClass('text-red-500 bg-red-500/50');
     setResult(data.success ? "¡Tu solicitud se ha enviado correctamente!" : "Hubo un error al enviar la solicitud.");
   };
   return <>
@@ -229,7 +231,9 @@ export default function App() {
               </div>
               <div className='w-full'>
                 <button type='submit' id='Enviar' className='hover:bg-blue-800 transition-colors duration-300 cursor-pointer text-gray-200 font-medium border border-gray-500 rounded-md p-3 w-full'>Enviar</button>
-                <p className={result ? 'text-green-500 bg-green-500/50' : 'text-red-500 bg-red-500/50' + ' font-[500] text-lg p-2 rounded-md text-center mt-5'}>{result}</p>
+                {
+                  result && <p className={`${resultMsgClass} font-[500] text-lg p-2 rounded-md text-center mt-5`}>{result}</p>
+                }
               </div>
             </form>
           </div>
