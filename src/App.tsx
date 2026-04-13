@@ -15,6 +15,7 @@ import viteLogo from '../public/img/vite-logo.png'
 import typescriptLogo from '../public/img/typescript-logo.png'
 import reactLogo from '../public/img/react-logo.png'
 import wwwLogo from '../public/img/www-logo.png'
+import googleCloudLogo from '../public/img/google-cloud.png'
 import NavLinksDesktop from './components/desktopNav/NavLinksDesktop'
 import Lines from './components/mobileNav/Lines'
 import NavLinkMobile from './components/mobileNav/NavLinkMobile'
@@ -46,8 +47,8 @@ export default function App() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     formData.append("access_key", "9bb4d3ae-976e-4fab-b4ee-95c54c892727");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
+    // https://api.web3forms.com/submit
+    const response = await fetch("https://apptester123.app.n8n.cloud/webhook-test/9ab87c74-d5af-43b8-86d2-1d74f8e108f4", {
       method: "POST",
       body: formData
     });
@@ -89,7 +90,7 @@ export default function App() {
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className='text-3xl font-medium text-center'>Estudiante de Tecn. en Desarrollo de Software</h2>
           <article className="max-w-xl md:max-w-2xl font-thin text-lg text-center">Mi nombre es Francisco Tomás Silvetti y
-            soy estudiante de tecnicatura en desarrollo de software, full stack orientado a <b className="font-medium">backend web</b>.
+            soy estudiante de tecnicatura en desarrollo de software full stack, enfocado al <b className="font-medium">backend web</b>.
             Me gusta crear soluciones eficientes y escalables, con un enfoque en la calidad, legibilidad y performance del código. <a href="#Aptitudes" className='underline'>Ver más</a>
           </article>
         </div>
@@ -110,7 +111,7 @@ export default function App() {
           </svg>
           }>
             <p className="">Considero mi desarrollo como flexible, escalable y comprensible para otros
-              desarrolladores. Me destaco en el desarrollo y mantenimiento de <b className="font-medium">RESTFUL API's</b> y sistemas <b className="font-medium">CRUD (create, read, update, delete)</b>.
+              desarrolladores. Me destaco en el desarrollo y mantenimiento de <b className="font-medium">RESTFUL API's</b> y sistemas <b className="font-medium">CRUD (create, read, update, delete)</b>. También sé  conectar diferentes apps a un servicio especifico usando <b>API Keys</b> y <b>Access Tokens</b>.
             </p>
           </ContainerAptitudes>
           <ContainerAptitudes title='Trabajo grupal' logo={<svg className="w-5 fill-gray-200" xmlns="http://www.w3.org/2000/svg"
@@ -168,13 +169,16 @@ export default function App() {
             <Habilidades img={mysqlLogo} lenguaje='MySQL' />
             <Habilidades img={sqliteLogo} lenguaje='SQLite' />
           </ContainerHabilidades>
+          <ContainerHabilidades title='Cloud services'>
+            <Habilidades img={googleCloudLogo} lenguaje='Google Cloud' />
+          </ContainerHabilidades>
+          <ContainerHabilidades title='Otras herramientas' >
+            <Habilidades img={githubLogo} lenguaje='GitHub' />
+            <Habilidades img={viteLogo} lenguaje='Vite' />
+            <Habilidades img={gitLogo} lenguaje='Git' />
+            <Habilidades img={antigravityLogo} lenguaje='Antigravity' />
+          </ContainerHabilidades>
         </div>
-        <ContainerHabilidades title='Otras herramientas' >
-          <Habilidades img={githubLogo} lenguaje='GitHub' />
-          <Habilidades img={viteLogo} lenguaje='Vite' />
-          <Habilidades img={gitLogo} lenguaje='Git' />
-          <Habilidades img={antigravityLogo} lenguaje='Antigravity' />
-        </ContainerHabilidades>
       </div>
     </Section>
     <Section apartado='Proyectos' clases='!h-auto scroll-mt-[100px]'>
@@ -223,7 +227,8 @@ export default function App() {
             <div>
               <p className='text-lg'>Estoy interesado en oportunidades prácticas para obtener experiencia laboral y aportar a proyectos. Si tenés alguna oferta o interés, no dudes en contactarme.</p>
             </div>
-            <form target="_blank" onSubmit={(e) => onSubmit(e)} action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-5 justify-between w-full border border-gray-600 rounded-md p-7 shadow-lg bg-gray-950/60'>
+            {/* // https://api.web3forms.com/submit */}
+            <form target="_blank" onSubmit={(e) => onSubmit(e)} action="https://apptester123.app.n8n.cloud/webhook-test/9ab87c74-d5af-43b8-86d2-1d74f8e108f4" method="POST" className='flex flex-col gap-5 justify-between w-full border border-gray-600 rounded-md p-7 shadow-lg bg-gray-950/60'>
               <div>
                 <InputGroup type='text' name='name' id='Nombre' campo='Nombre' placeholder='Ingrese su nombre...' />
                 <InputGroup type='email' name='email' id='Correo' campo='Correo' placeholder='Ingrese su correo...' />
